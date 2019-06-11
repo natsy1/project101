@@ -32,19 +32,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.outputBox = new System.Windows.Forms.PictureBox();
-            this.inputBox = new System.Windows.Forms.PictureBox();
-            this.browse = new System.Windows.Forms.Button();
+            this.OutputBox = new System.Windows.Forms.PictureBox();
+            this.InputBox = new System.Windows.Forms.PictureBox();
+            this.Browse = new System.Windows.Forms.Button();
             this.directory = new System.Windows.Forms.TextBox();
-            this.run = new System.Windows.Forms.Button();
-            this.saveAs = new System.Windows.Forms.Button();
-            this.roi = new System.Windows.Forms.Button();
-            this.details = new System.Windows.Forms.Button();
-            this.crop = new System.Windows.Forms.Button();
-            this.help = new System.Windows.Forms.Button();
-            this.maximize = new System.Windows.Forms.Button();
-            this.minimize = new System.Windows.Forms.Button();
-            this.close = new System.Windows.Forms.Button();
+            this.Run = new System.Windows.Forms.Button();
+            this.SaveAs = new System.Windows.Forms.Button();
+            this.ROI = new System.Windows.Forms.Button();
+            this.Details = new System.Windows.Forms.Button();
+            this.Crop = new System.Windows.Forms.Button();
+            this.Help = new System.Windows.Forms.Button();
+            this.Maximize = new System.Windows.Forms.Button();
+            this.Minimize = new System.Windows.Forms.Button();
+            this.CloseApp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -54,8 +54,8 @@
             this.malignRate = new ns1.BunifuCircleProgressbar();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outputBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inputBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OutputBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBox)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -108,59 +108,59 @@
             this.label1.TabIndex = 62;
             this.label1.Text = "Sistem Diagnosis dengan Bantuan Komputer";
             // 
-            // outputBox
+            // OutputBox
             // 
-            this.outputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.OutputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.outputBox.BackColor = System.Drawing.Color.Transparent;
-            this.outputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.outputBox.Location = new System.Drawing.Point(556, 153);
-            this.outputBox.Name = "outputBox";
-            this.outputBox.Size = new System.Drawing.Size(400, 300);
-            this.outputBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.outputBox.TabIndex = 68;
-            this.outputBox.TabStop = false;
+            this.OutputBox.BackColor = System.Drawing.Color.Transparent;
+            this.OutputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OutputBox.Location = new System.Drawing.Point(556, 153);
+            this.OutputBox.Name = "OutputBox";
+            this.OutputBox.Size = new System.Drawing.Size(400, 300);
+            this.OutputBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.OutputBox.TabIndex = 68;
+            this.OutputBox.TabStop = false;
             // 
-            // inputBox
+            // InputBox
             // 
-            this.inputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.InputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputBox.BackColor = System.Drawing.Color.Transparent;
-            this.inputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inputBox.Location = new System.Drawing.Point(150, 153);
-            this.inputBox.Name = "inputBox";
-            this.inputBox.Size = new System.Drawing.Size(400, 300);
-            this.inputBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.inputBox.TabIndex = 69;
-            this.inputBox.TabStop = false;
-            this.inputBox.Click += new System.EventHandler(this.inputBox_Click);
-            this.inputBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PicBox_Paint);
-            this.inputBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseDown);
-            this.inputBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseMove);
-            this.inputBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseUp);
+            this.InputBox.BackColor = System.Drawing.Color.Transparent;
+            this.InputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InputBox.Location = new System.Drawing.Point(150, 153);
+            this.InputBox.Name = "InputBox";
+            this.InputBox.Size = new System.Drawing.Size(400, 300);
+            this.InputBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.InputBox.TabIndex = 69;
+            this.InputBox.TabStop = false;
+            this.InputBox.Click += new System.EventHandler(this.InputBox_Click);
+            this.InputBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PicBox_Paint);
+            this.InputBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseDown);
+            this.InputBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseMove);
+            this.InputBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseUp);
             // 
-            // browse
+            // Browse
             // 
-            this.browse.AutoSize = true;
-            this.browse.BackColor = System.Drawing.Color.DodgerBlue;
-            this.browse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.browse.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.browse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.browse.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.browse.ForeColor = System.Drawing.Color.White;
-            this.browse.Image = ((System.Drawing.Image)(resources.GetObject("browse.Image")));
-            this.browse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.browse.Location = new System.Drawing.Point(0, 190);
-            this.browse.Name = "browse";
-            this.browse.Size = new System.Drawing.Size(135, 50);
-            this.browse.TabIndex = 70;
-            this.browse.Text = "   Browse Image";
-            this.browse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.browse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.browse.UseVisualStyleBackColor = false;
-            this.browse.Click += new System.EventHandler(this.browse_Click);
+            this.Browse.AutoSize = true;
+            this.Browse.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Browse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Browse.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Browse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Browse.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Browse.ForeColor = System.Drawing.Color.White;
+            this.Browse.Image = ((System.Drawing.Image)(resources.GetObject("Browse.Image")));
+            this.Browse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Browse.Location = new System.Drawing.Point(0, 190);
+            this.Browse.Name = "Browse";
+            this.Browse.Size = new System.Drawing.Size(135, 50);
+            this.Browse.TabIndex = 70;
+            this.Browse.Text = "   Browse Image";
+            this.Browse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Browse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Browse.UseVisualStyleBackColor = false;
+            this.Browse.Click += new System.EventHandler(this.Browse_Click);
             // 
             // directory
             // 
@@ -174,179 +174,179 @@
             this.directory.Size = new System.Drawing.Size(325, 20);
             this.directory.TabIndex = 71;
             // 
-            // run
+            // Run
             // 
-            this.run.AutoSize = true;
-            this.run.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.run.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.run.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.run.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.run.ForeColor = System.Drawing.Color.White;
-            this.run.Image = ((System.Drawing.Image)(resources.GetObject("run.Image")));
-            this.run.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.run.Location = new System.Drawing.Point(0, 240);
-            this.run.Name = "run";
-            this.run.Size = new System.Drawing.Size(135, 50);
-            this.run.TabIndex = 75;
-            this.run.Text = "   Diagnose";
-            this.run.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.run.UseVisualStyleBackColor = false;
-            this.run.Click += new System.EventHandler(this.run_Click);
+            this.Run.AutoSize = true;
+            this.Run.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.Run.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Run.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Run.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Run.ForeColor = System.Drawing.Color.White;
+            this.Run.Image = ((System.Drawing.Image)(resources.GetObject("Run.Image")));
+            this.Run.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Run.Location = new System.Drawing.Point(0, 240);
+            this.Run.Name = "Run";
+            this.Run.Size = new System.Drawing.Size(135, 50);
+            this.Run.TabIndex = 75;
+            this.Run.Text = "   Diagnose";
+            this.Run.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Run.UseVisualStyleBackColor = false;
+            this.Run.Click += new System.EventHandler(this.Run_Click);
             // 
-            // saveAs
+            // SaveAs
             // 
-            this.saveAs.AutoSize = true;
-            this.saveAs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.saveAs.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.saveAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveAs.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveAs.ForeColor = System.Drawing.Color.White;
-            this.saveAs.Image = ((System.Drawing.Image)(resources.GetObject("saveAs.Image")));
-            this.saveAs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.saveAs.Location = new System.Drawing.Point(0, 290);
-            this.saveAs.Name = "saveAs";
-            this.saveAs.Size = new System.Drawing.Size(135, 50);
-            this.saveAs.TabIndex = 76;
-            this.saveAs.Text = "   Save As";
-            this.saveAs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.saveAs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.saveAs.UseVisualStyleBackColor = false;
+            this.SaveAs.AutoSize = true;
+            this.SaveAs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.SaveAs.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.SaveAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveAs.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveAs.ForeColor = System.Drawing.Color.White;
+            this.SaveAs.Image = ((System.Drawing.Image)(resources.GetObject("SaveAs.Image")));
+            this.SaveAs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SaveAs.Location = new System.Drawing.Point(0, 290);
+            this.SaveAs.Name = "SaveAs";
+            this.SaveAs.Size = new System.Drawing.Size(135, 50);
+            this.SaveAs.TabIndex = 76;
+            this.SaveAs.Text = "   Save As";
+            this.SaveAs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SaveAs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SaveAs.UseVisualStyleBackColor = false;
             // 
-            // roi
+            // ROI
             // 
-            this.roi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ROI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.roi.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.roi.BackColor = System.Drawing.Color.White;
-            this.roi.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.roi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roi.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roi.Image = ((System.Drawing.Image)(resources.GetObject("roi.Image")));
-            this.roi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.roi.Location = new System.Drawing.Point(150, 515);
-            this.roi.Name = "roi";
-            this.roi.Size = new System.Drawing.Size(142, 35);
-            this.roi.TabIndex = 79;
-            this.roi.Text = "Region of Interest";
-            this.roi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.roi.UseVisualStyleBackColor = false;
-            this.roi.Click += new System.EventHandler(this.roi_Click);
+            this.ROI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ROI.BackColor = System.Drawing.Color.White;
+            this.ROI.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.ROI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ROI.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ROI.Image = ((System.Drawing.Image)(resources.GetObject("ROI.Image")));
+            this.ROI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ROI.Location = new System.Drawing.Point(150, 515);
+            this.ROI.Name = "ROI";
+            this.ROI.Size = new System.Drawing.Size(142, 35);
+            this.ROI.TabIndex = 79;
+            this.ROI.Text = "Region of Interest";
+            this.ROI.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ROI.UseVisualStyleBackColor = false;
+            this.ROI.Click += new System.EventHandler(this.ROI_Click);
             // 
-            // details
+            // Details
             // 
-            this.details.AutoSize = true;
-            this.details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.details.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.details.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.details.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.details.ForeColor = System.Drawing.Color.White;
-            this.details.Image = ((System.Drawing.Image)(resources.GetObject("details.Image")));
-            this.details.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.details.Location = new System.Drawing.Point(0, 340);
-            this.details.Name = "details";
-            this.details.Size = new System.Drawing.Size(135, 50);
-            this.details.TabIndex = 80;
-            this.details.Text = "   Details";
-            this.details.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.details.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.details.UseVisualStyleBackColor = false;
-            this.details.Click += new System.EventHandler(this.details_Click);
+            this.Details.AutoSize = true;
+            this.Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Details.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Details.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Details.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Details.ForeColor = System.Drawing.Color.White;
+            this.Details.Image = ((System.Drawing.Image)(resources.GetObject("Details.Image")));
+            this.Details.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Details.Location = new System.Drawing.Point(0, 340);
+            this.Details.Name = "Details";
+            this.Details.Size = new System.Drawing.Size(135, 50);
+            this.Details.TabIndex = 80;
+            this.Details.Text = "   Details";
+            this.Details.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Details.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Details.UseVisualStyleBackColor = false;
+            this.Details.Click += new System.EventHandler(this.Details_Click);
             // 
-            // crop
+            // Crop
             // 
-            this.crop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Crop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.crop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.crop.BackColor = System.Drawing.Color.White;
-            this.crop.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.crop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crop.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crop.Image = ((System.Drawing.Image)(resources.GetObject("crop.Image")));
-            this.crop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.crop.Location = new System.Drawing.Point(298, 515);
-            this.crop.Name = "crop";
-            this.crop.Size = new System.Drawing.Size(78, 35);
-            this.crop.TabIndex = 81;
-            this.crop.Text = "Crop";
-            this.crop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.crop.UseVisualStyleBackColor = false;
-            this.crop.Click += new System.EventHandler(this.crop_Click);
+            this.Crop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Crop.BackColor = System.Drawing.Color.White;
+            this.Crop.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Crop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Crop.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Crop.Image = ((System.Drawing.Image)(resources.GetObject("Crop.Image")));
+            this.Crop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Crop.Location = new System.Drawing.Point(298, 515);
+            this.Crop.Name = "Crop";
+            this.Crop.Size = new System.Drawing.Size(78, 35);
+            this.Crop.TabIndex = 81;
+            this.Crop.Text = "Crop";
+            this.Crop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Crop.UseVisualStyleBackColor = false;
+            this.Crop.Click += new System.EventHandler(this.Crop_Click);
             // 
-            // help
+            // Help
             // 
-            this.help.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(200)))));
-            this.help.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.help.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.help.Image = ((System.Drawing.Image)(resources.GetObject("help.Image")));
-            this.help.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.help.Location = new System.Drawing.Point(0, 585);
-            this.help.Name = "help";
-            this.help.Size = new System.Drawing.Size(135, 65);
-            this.help.TabIndex = 82;
-            this.help.Text = "Help";
-            this.help.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.help.UseVisualStyleBackColor = false;
-            this.help.Click += new System.EventHandler(this.help_Click);
+            this.Help.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(200)))));
+            this.Help.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Help.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Help.Image = ((System.Drawing.Image)(resources.GetObject("Help.Image")));
+            this.Help.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Help.Location = new System.Drawing.Point(0, 585);
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(135, 65);
+            this.Help.TabIndex = 82;
+            this.Help.Text = "Help";
+            this.Help.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Help.UseVisualStyleBackColor = false;
+            this.Help.Click += new System.EventHandler(this.Help_Click);
             // 
-            // maximize
+            // Maximize
             // 
-            this.maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximize.AutoSize = true;
-            this.maximize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.maximize.BackColor = System.Drawing.Color.Transparent;
-            this.maximize.FlatAppearance.BorderSize = 0;
-            this.maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximize.Image = ((System.Drawing.Image)(resources.GetObject("maximize.Image")));
-            this.maximize.Location = new System.Drawing.Point(892, 12);
-            this.maximize.Name = "maximize";
-            this.maximize.Size = new System.Drawing.Size(32, 32);
-            this.maximize.TabIndex = 67;
-            this.maximize.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.maximize.UseVisualStyleBackColor = false;
-            this.maximize.Click += new System.EventHandler(this.maximize_Click);
+            this.Maximize.AutoSize = true;
+            this.Maximize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Maximize.BackColor = System.Drawing.Color.Transparent;
+            this.Maximize.FlatAppearance.BorderSize = 0;
+            this.Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Maximize.Image = ((System.Drawing.Image)(resources.GetObject("Maximize.Image")));
+            this.Maximize.Location = new System.Drawing.Point(892, 12);
+            this.Maximize.Name = "Maximize";
+            this.Maximize.Size = new System.Drawing.Size(32, 32);
+            this.Maximize.TabIndex = 67;
+            this.Maximize.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.Maximize.UseVisualStyleBackColor = false;
+            this.Maximize.Click += new System.EventHandler(this.Maximize_Click);
             // 
-            // minimize
+            // Minimize
             // 
-            this.minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimize.AutoSize = true;
-            this.minimize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.minimize.BackColor = System.Drawing.Color.Transparent;
-            this.minimize.FlatAppearance.BorderSize = 0;
-            this.minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimize.Image = ((System.Drawing.Image)(resources.GetObject("minimize.Image")));
-            this.minimize.Location = new System.Drawing.Point(857, 12);
-            this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(31, 31);
-            this.minimize.TabIndex = 66;
-            this.minimize.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.minimize.UseVisualStyleBackColor = false;
-            this.minimize.Click += new System.EventHandler(this.minimize_Click);
+            this.Minimize.AutoSize = true;
+            this.Minimize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Minimize.BackColor = System.Drawing.Color.Transparent;
+            this.Minimize.FlatAppearance.BorderSize = 0;
+            this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
+            this.Minimize.Location = new System.Drawing.Point(857, 12);
+            this.Minimize.Name = "Minimize";
+            this.Minimize.Size = new System.Drawing.Size(31, 31);
+            this.Minimize.TabIndex = 66;
+            this.Minimize.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.Minimize.UseVisualStyleBackColor = false;
+            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
             // 
-            // close
+            // CloseApp
             // 
-            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.close.AutoSize = true;
-            this.close.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.close.BackColor = System.Drawing.Color.Transparent;
-            this.close.FlatAppearance.BorderSize = 0;
-            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
-            this.close.Location = new System.Drawing.Point(927, 12);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(31, 31);
-            this.close.TabIndex = 65;
-            this.close.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.close.UseVisualStyleBackColor = false;
-            this.close.Click += new System.EventHandler(this.close_Click);
+            this.CloseApp.AutoSize = true;
+            this.CloseApp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CloseApp.BackColor = System.Drawing.Color.Transparent;
+            this.CloseApp.FlatAppearance.BorderSize = 0;
+            this.CloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseApp.Image = ((System.Drawing.Image)(resources.GetObject("CloseApp.Image")));
+            this.CloseApp.Location = new System.Drawing.Point(927, 12);
+            this.CloseApp.Name = "CloseApp";
+            this.CloseApp.Size = new System.Drawing.Size(31, 31);
+            this.CloseApp.TabIndex = 65;
+            this.CloseApp.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.CloseApp.UseVisualStyleBackColor = false;
+            this.CloseApp.Click += new System.EventHandler(this.Close_Click);
             // 
             // panel1
             // 
@@ -355,12 +355,12 @@
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.help);
-            this.panel1.Controls.Add(this.details);
-            this.panel1.Controls.Add(this.saveAs);
+            this.panel1.Controls.Add(this.Help);
+            this.panel1.Controls.Add(this.Details);
+            this.panel1.Controls.Add(this.SaveAs);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.browse);
-            this.panel1.Controls.Add(this.run);
+            this.panel1.Controls.Add(this.Browse);
+            this.panel1.Controls.Add(this.Run);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -425,7 +425,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.malignRate.animated = false;
-            this.malignRate.animationIterval = 5;
+            this.malignRate.animationIterval = 10;
             this.malignRate.animationSpeed = 300;
             this.malignRate.BackColor = System.Drawing.Color.White;
             this.malignRate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("malignRate.BackgroundImage")));
@@ -442,7 +442,7 @@
             this.malignRate.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.malignRate.Size = new System.Drawing.Size(152, 152);
             this.malignRate.TabIndex = 88;
-            this.malignRate.Value = 5;
+            this.malignRate.Value = 75;
             // 
             // label4
             // 
@@ -471,17 +471,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.close);
-            this.Controls.Add(this.minimize);
-            this.Controls.Add(this.maximize);
+            this.Controls.Add(this.CloseApp);
+            this.Controls.Add(this.Minimize);
+            this.Controls.Add(this.Maximize);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.crop);
-            this.Controls.Add(this.roi);
+            this.Controls.Add(this.Crop);
+            this.Controls.Add(this.ROI);
             this.Controls.Add(this.directory);
-            this.Controls.Add(this.inputBox);
-            this.Controls.Add(this.outputBox);
+            this.Controls.Add(this.InputBox);
+            this.Controls.Add(this.OutputBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Name = "Form1";
@@ -489,8 +489,8 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outputBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inputBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OutputBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -506,19 +506,19 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox outputBox;
-        private System.Windows.Forms.PictureBox inputBox;
-        private System.Windows.Forms.Button browse;
+        private System.Windows.Forms.PictureBox OutputBox;
+        private System.Windows.Forms.PictureBox InputBox;
+        private System.Windows.Forms.Button Browse;
         private System.Windows.Forms.TextBox directory;
-        private System.Windows.Forms.Button run;
-        private System.Windows.Forms.Button saveAs;
-        private System.Windows.Forms.Button roi;
-        private System.Windows.Forms.Button details;
-        private System.Windows.Forms.Button crop;
-        private System.Windows.Forms.Button help;
-        private System.Windows.Forms.Button maximize;
-        private System.Windows.Forms.Button minimize;
-        private System.Windows.Forms.Button close;
+        private System.Windows.Forms.Button Run;
+        private System.Windows.Forms.Button SaveAs;
+        private System.Windows.Forms.Button ROI;
+        private System.Windows.Forms.Button Details;
+        private System.Windows.Forms.Button Crop;
+        private System.Windows.Forms.Button Help;
+        private System.Windows.Forms.Button Maximize;
+        private System.Windows.Forms.Button Minimize;
+        private System.Windows.Forms.Button CloseApp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox2;

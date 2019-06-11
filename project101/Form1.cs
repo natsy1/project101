@@ -81,18 +81,20 @@ namespace project101
                     rectCropArea.X = e.X;
                     rectCropArea.Y = e.Y;
                 }
-                inputBox.Refresh();
+                InputBox.Refresh();
             }
         }
 
         private void PicBox_Paint(object sender, PaintEventArgs e)
         {
-            Pen drawLine = new Pen(Color.Red);
-            drawLine.DashStyle = DashStyle.Dash;
+            Pen drawLine = new Pen(Color.Red)
+            {
+                DashStyle = DashStyle.Dash
+            };
             e.Graphics.DrawRectangle(drawLine, rectCropArea);
         }
 
-        private void roi_Click(object sender, EventArgs e)
+        private void ROI_Click(object sender, EventArgs e)
         {
             mouseClicked = false;
 
@@ -101,37 +103,37 @@ namespace project101
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
         }
 
-        private void crop_Click(object sender, EventArgs e)
+        private void Crop_Click(object sender, EventArgs e)
         {
-            outputBox.Refresh();
+            OutputBox.Refresh();
 
-            Bitmap sourceBitmap = new Bitmap(inputBox.Image, inputBox.Width, inputBox.Height);
-            Graphics g = outputBox.CreateGraphics();
+            Bitmap sourceBitmap = new Bitmap(InputBox.Image, InputBox.Width, InputBox.Height);
+            Graphics g = OutputBox.CreateGraphics();
 
-            g.DrawImage(sourceBitmap, new Rectangle(0, 0, outputBox.Width, outputBox.Height), rectCropArea, GraphicsUnit.Pixel);
+            g.DrawImage(sourceBitmap, new Rectangle(0, 0, OutputBox.Width, OutputBox.Height), rectCropArea, GraphicsUnit.Pixel);
             sourceBitmap.Dispose();
         }
 
-        private void inputBox_Click(object sender, EventArgs e)
+        private void InputBox_Click(object sender, EventArgs e)
         {
-            inputBox.Refresh();
+            InputBox.Refresh();
         }
 
         #endregion
 
 
         #region FormNavigation
-        private void close_Click(object sender, EventArgs e)
+        private void Close_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void minimize_Click(object sender, EventArgs e)
+        private void Minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void maximize_Click(object sender, EventArgs e)
+        private void Maximize_Click(object sender, EventArgs e)
         {
             if (WindowState.ToString() == "Normal")
             {
@@ -142,7 +144,7 @@ namespace project101
                 this.WindowState = FormWindowState.Normal;
             }
         }
-
+        
         Point lastPoint;
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -160,18 +162,18 @@ namespace project101
         #endregion
         
 
-        #region
-        Bitmap inputImg;
-
+        #region VariableConstructor
         bool mouseClicked;
         Point startPoint = new Point();
         Point endPoint = new Point();
         Rectangle rectCropArea;
 
+        Bitmap inputImg;
+
         #endregion
 
 
-        public void browse_Click(object sender, EventArgs e)
+        public void Browse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog
             {
@@ -182,8 +184,8 @@ namespace project101
             {
                 //Open the browsed image and display it
                 Bitmap original = new Bitmap(ofd.FileName);
-                inputBox.Image = original;
-                outputBox.Image = original;
+                InputBox.Image = original;
+                OutputBox.Image = original;
                 //Display image file path  
                 directory.Text = ofd.FileName;
 
@@ -191,19 +193,19 @@ namespace project101
             }
         }
         
-        private void help_Click(object sender, EventArgs e)
+        private void Help_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
             form3.ShowDialog();
         }
 
-        private void details_Click(object sender, EventArgs e)
+        private void Details_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
             form2.ShowDialog();
         }
 
-        private void run_Click(object sender, EventArgs e)
+        private void Run_Click(object sender, EventArgs e)
         {
             //Adaptive Median Filter
 
