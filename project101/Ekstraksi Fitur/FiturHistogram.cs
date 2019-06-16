@@ -27,7 +27,7 @@ namespace project101
                     intensitas = F[i, j];
                     Frek[intensitas] = Frek[intensitas] + 1;
                 }
-            }
+            }   
 
             //Hitung probabilitas
             int jum_piksel = m * n;
@@ -60,26 +60,21 @@ namespace project101
             entropi = -entropi;
 
             //Hitung deviasi standar
+            //Hitung kurtosis
+            double kurtosis = 0;
             double varians = 0;
             for (int i = 0; i < L; i++)
             {
                 varians = varians + Math.Pow((i - mu), 2) * Prob[i];
+                kurtosis = kurtosis + (Math.Pow((i - mu), 4) * Prob[i]) - 3;
             }
             double deviasi = Math.Sqrt(varians);
-            double varians_n = Convert.ToDouble(varians) / Math.Pow((L - 1), 2);  //Normalisasi
-
-            //Hitung kurtosis
-            double kurtosis = 0;
-            for (int i = 0; i < L; i++)
-            {
-                kurtosis = kurtosis + (Math.Pow((i - mu), 4) * Prob[i]) - 3;
-            }           
+            double varians_n = Convert.ToDouble(varians) / Math.Pow((L - 1), 2);  //Normalisasi         
 
             //Hitung R atau Smoothness
             double smoothness = 1 - 1 / (1 + varians_n);
 
             double[] Stat = new double[] { mu, deviasi, skewness, energi, entropi, smoothness, varians_n, kurtosis };
-
             return Stat;
         }
     }

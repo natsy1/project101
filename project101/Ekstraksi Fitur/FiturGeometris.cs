@@ -113,8 +113,8 @@ namespace project101
         public double Dispersion(byte[,] a)
         {
             double hasil_jarakmaks = GetDiameter(a);
-            double hasil_luas1 = GetLuas(a);
-            double dispersion = hasil_jarakmaks / hasil_luas1;
+            double hasil_luas = GetLuas(a);
+            double dispersion = hasil_jarakmaks / hasil_luas;
             return dispersion;
         }
         public double GetDiameter(byte[,] BW)
@@ -194,7 +194,6 @@ namespace project101
             double a = CCLuas(A);
             double rasio = 4 * Math.PI * a / Math.Pow(p, 2);
             double cf = 1 - rasio;
-
             return cf;
         }
         public double CCPerimeter(byte[,] BW)

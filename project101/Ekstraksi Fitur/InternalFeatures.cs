@@ -6,6 +6,29 @@
         FiturTekstur tekstur = new FiturTekstur();
         FiturLaws law = new FiturLaws();
 
+        byte[,] BW;
+        double[][] glcm;
+        double[] glrlm;
+        double[] lacunarity;
+        double[] HF;
+
+        public InternalFeatures(byte[,] matrixNodule)
+        {
+            BW = matrixNodule;
+            glcm = tekstur.GLCM(BW);
+            glrlm = tekstur.GLRLM(BW);
+            lacunarity = tekstur.Lacunarity(BW);
+            HF = hist.Histogram(BW);
+            byte[][,] Laws = law.Laws(BW);
+        }
+
+
+        public void getInternal()
+        {
+
+        }
+
+
         #region CompositionFeatures
         public double[][] GLCM(byte[,] BW)
         {

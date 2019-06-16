@@ -1,84 +1,118 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace project101
+﻿namespace project101
 {
     class ExternalFeatures
     {
         FiturGeometris geo = new FiturGeometris();
         MomenCitra momen = new MomenCitra();
 
+        byte[,] a;
+        double rasiotl;
+        double rec;
+        double dispersion;
+        double compactness;
+        double circularity;
+        double convex;
+        double tortuosity;
+        double aspectratio;
+        double nilaiCC;
+        double[] momenHu;
+        double[] momenZer;
+
+        public ExternalFeatures(byte[,] matrixMasking)
+        {
+            a = matrixMasking;
+            rasiotl = geo.RasioTL(a);
+            rec = geo.Rectangularity(a);
+            dispersion = geo.Dispersion(a);
+            compactness = geo.Compactness(a);
+            circularity = geo.Circularity(a);
+            convex = geo.Convexity(a);
+            tortuosity = geo.Tortuosity(a);
+            aspectratio = geo.AspectRatio(a);
+            nilaiCC = geo.SelisihKodeRantai(a);
+            momenHu = momen.MomenHu(a);
+            momenZer = momen.MomenZernike(a, 4);
+        }
+
+        public double[][] getExternal(byte[,] matrixMasking)
+        {
+            double[] MarginFeatures = new double[] { rasiotl, rec, dispersion, compactness, circularity, convex, tortuosity, aspectratio, nilaiCC };
+            double[] ShapeFeatures = new double[]
+            {
+                rasiotl, rec, dispersion, compactness, circularity, convex, tortuosity,
+                momenHu[0], momenHu[1], momenHu[2], momenHu[3], momenHu[4], momenHu[5], momenHu[6],
+                momenZer[0], momenZer[1], momenZer[2], momenZer[3], momenZer[4], momenZer[5], momenZer[0]
+            };
+            double[][] extFeature = new double[][] { MarginFeatures, ShapeFeatures };
+            return extFeature;
+        }
 
         #region MarginFeatures
         public double RasioTL(byte[,] a)
         {
-            double rasiotl = geo.RasioTL(a);
+            rasiotl = geo.RasioTL(a);
             return rasiotl;
         }
 
         public double Rectangularity(byte[,] a)
         {
-            double rec = geo.Rectangularity(a);
+            rec = geo.Rectangularity(a);
             return rec;
         }
 
         public double Dispersion(byte[,] a)
         {
-            double dispersion = geo.Dispersion(a);
+            dispersion = geo.Dispersion(a);
             return dispersion;
         }
 
         public double Compactness(byte[,] a)
         {
-            double compactness = geo.Compactness(a);
+            compactness = geo.Compactness(a);
             return compactness;
         }
 
         public double Circularity(byte[,] a)
         {
-            double c = geo.Circularity(a);
-            return c;
+            circularity = geo.Circularity(a);
+            return circularity;
         }
 
         public double Convexity(byte[,] a)
         {
-            double convex = geo.Convexity(a);
+            convex = geo.Convexity(a);
             return convex;
         }
 
         public double Tortuosity(byte[,] a)
         {
-            double tortuosity = geo.Tortuosity(a);
+            tortuosity = geo.Tortuosity(a);
             return tortuosity;
         }
 
         public double AspectRatio(byte[,] a)
         {
-            double aspectratio = geo.AspectRatio(a);
+            aspectratio = geo.AspectRatio(a);
             return aspectratio;
         }
 
         public double SelisihKodeRantai(byte[,] a)
         {
-            double nilaiCC = geo.SelisihKodeRantai(a);
+            nilaiCC = geo.SelisihKodeRantai(a);
             return nilaiCC;
         }
         #endregion
-
-
+        
         #region ShapeFeatures
         public double[] MomenHu(byte[,] BW)
         {
-            double[] momenHu = momen.MomenHu(BW);
+            momenHu = momen.MomenHu(BW);
             return momenHu;
         }
 
         public double[] MomenZernike(byte[,] BW)
         {
-            double[] momenZer = momen.MomenZernike(BW, 4);
+            momenZer = momen.MomenZernike(BW, 4);
             return momenZer;
         }
         #endregion

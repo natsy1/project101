@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace project1
+namespace project101
 {
     public class AdaptiveMedianFilter
     {

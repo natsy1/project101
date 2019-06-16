@@ -209,7 +209,6 @@ namespace project101
                     if (img[i, j] >= maxi) { maxi = img[i, j]; }
                 }
             }
-            //int[] bx = new int[] { 1, 1, cols, rows };
 
             img = opt.MatrixScalarD(img, mini, "subtract");
             maxi = maxi - mini;

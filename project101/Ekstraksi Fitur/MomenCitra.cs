@@ -12,8 +12,7 @@ namespace project101
     {
         FiturGeometris geo = new FiturGeometris();
         BitmapToMatrix conv = new BitmapToMatrix();
-
-
+        
         public double[] MomenHu(byte[,] F)
         {
             //function[Momen] = momenhu(F)

@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text;
+using System.IO;
+using Emgu.CV;
+using Emgu.CV.Structure;
+using Emgu.CV.Util;
 
 namespace project101
 {
@@ -170,6 +170,8 @@ namespace project101
 
         Bitmap inputImg;
 
+        BitmapToMatrix conv = new BitmapToMatrix();
+
         #endregion
 
 
@@ -207,8 +209,37 @@ namespace project101
 
         private void Run_Click(object sender, EventArgs e)
         {
+            Run.Text = "Processing...";
+            Run.Refresh();
             //Adaptive Median Filter
+            byte[,] matrixInput = conv.BitmaptoMatrix(inputImg);
+            AdaptiveMedianFilter adpMedian = new AdaptiveMedianFilter(matrixInput, 17);
+            adpMedian.Filter();
+            byte[,] matrixAmf = adpMedian.GetResult();
+            Bitmap bitmapAmf = conv.getBMP(matrixAmf);
+            OutputBox.Image = conv.getBMP(matrixAmf);
+            OutputBox.Refresh(); InputBox.Refresh();
 
+            //Bilateral Filter
+            BilateralFilter bf = new BilateralFilter();
+            Image<Gray, byte> grayBf = bf.bilateralFilter(new Image<Gray, byte>(bitmapAmf));
+            OutputBox.Image = grayBf.Bitmap;
+            OutputBox.Refresh(); InputBox.Refresh();
+
+            //Active Contour
+
+
+
+
+            //Feature Extraction
+            //byte[,] matrixMasking;
+            //byte[,] matrixNodule;
+
+            //ExternalFeatures ext = new ExternalFeatures(matrixMasking);
+
+
+            Run.Text = "Finished";
+            Run.Refresh();
         }
     }
 }
