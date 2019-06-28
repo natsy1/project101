@@ -9,88 +9,71 @@ namespace project101
 {
     class SupportVectorMachine
     {
-        public string MarginClassification()
+        public double MarginClassification()
         {
-            //Inisialization of Train Data
-            ConverterUtils.DataSource trainsource = new ConverterUtils.DataSource("MarginTrainInstances.arff");
-            Instances traininstances = trainsource.getDataSet();
-            traininstances.setClassIndex(traininstances.numAttributes() - 1);
-
             //Get single Test Instance from CSV file
             CSVLoader loader = new CSVLoader();
-            loader.setSource(new java.io.File("GetMarginFeatures.csv"));
+            loader.setSource(new java.io.File("GetMargin.csv"));
             Instances testinstances = loader.getDataSet();
             testinstances.setClassIndex(testinstances.numAttributes() - 1);
             Instance sekarang = testinstances.lastInstance();
 
             //Get and build saved model
-            Classifier model = new LibSVM();
-            SerializationHelper.write("MarginModel.model", model);
-            Classifier svm = (Classifier)SerializationHelper.read("MarginModel.model");
-            InputMappedClassifier imc = new InputMappedClassifier();
-            imc.setClassifier(svm);
-            imc.buildClassifier(traininstances);
-            //svm.setOptions();
-
+            LibSVM svm = new LibSVM();
+            svm = (LibSVM)SerializationHelper.read("MarginModel.model");
+                       
             //Classify actual test instance
-            double clsValue = imc.classifyInstance(sekarang);
-            sekarang.setClassValue(clsValue);
-            double angka = sekarang.classValue();
-            string kelas = sekarang.toString(sekarang.numAttributes() - 1);
-            Console.WriteLine(sekarang.classValue());
-            Console.WriteLine(sekarang.toString(sekarang.numAttributes() - 1));
+            double clsValue = svm.classifyInstance(sekarang);
+            Console.WriteLine(clsValue);
 
-            //Evaluation eval = new Evaluation(traininstances);
-            //eval.evaluateModel(svm, testinstances);
-            //Console.WriteLine(eval.toSummaryString());
-            return kelas;
-        }
+            return clsValue;
+        }//0=ireguler, 1=halus
 
 
-        public string ShapeClassification()
+        public double[] ShapeClassification()
         {
-            //Inisialization of Train Data
-            ConverterUtils.DataSource trainsource = new ConverterUtils.DataSource("ShapeTrainInstances.arff");
-            Instances traininstances = trainsource.getDataSet();
-            traininstances.setClassIndex(traininstances.numAttributes() - 1);
-
             //Get single Test Instance from CSV file
             CSVLoader loader = new CSVLoader();
-            loader.setSource(new java.io.File("GetShapeFeatures.csv"));
+            loader.setSource(new java.io.File("GetOrientation.csv"));
             Instances testinstances = loader.getDataSet();
             testinstances.setClassIndex(testinstances.numAttributes() - 1);
             Instance sekarang = testinstances.lastInstance();
 
             //Get and build saved model
-            Classifier model = new LibSVM();
-            SerializationHelper.write("ShapeModel.model", model);
-            Classifier svm = (Classifier)SerializationHelper.read("ShapeModel.model");
-            InputMappedClassifier imc = new InputMappedClassifier();
-            imc.setClassifier(svm);
-            imc.buildClassifier(traininstances);
-            //svm.setOptions();
+            LibSVM modelShape = new LibSVM();
+            LibSVM modelOri = new LibSVM();
+            modelOri = (LibSVM)SerializationHelper.read("OrientationModel.model");
+            modelShape = (LibSVM)SerializationHelper.read("ShapeModel.model");
 
             //Classify actual test instance
-            double clsValue = imc.classifyInstance(sekarang);
-            sekarang.setClassValue(clsValue);
-            double angka = sekarang.classValue();
-            string kelas = sekarang.toString(sekarang.numAttributes() - 1);
-            Console.WriteLine(sekarang.classValue());
-            Console.WriteLine(sekarang.toString(sekarang.numAttributes() - 1));
+            double valueShape = modelShape.classifyInstance(sekarang);
+            double valueOri = modelOri.classifyInstance(sekarang);
+            Console.WriteLine(valueOri);
+            Console.WriteLine(valueShape);
+            double[] value = new double[] { valueShape, valueOri };
 
-            //Evaluation eval = new Evaluation(traininstances);
-            //eval.evaluateModel(svm, testinstances);
-            //Console.WriteLine(eval.toSummaryString());
-            return kelas;
-        }
+            return value;
+        }//0=ireguler, 1=roundtooval
         
 
-        public void OrientationClassification(double kelasShape)
-        {
-            //string kelasOri;
-            //if (kelasShape == 0) { kelasOri = ""; }
-            //else if (kelasShape == 1) { kelasOri = ""; }
-            //return kelasOri;
-        }
+        //public double OrientationClassification()
+        //{
+        //    //Get single Test Instance from CSV file
+        //    CSVLoader loader = new CSVLoader();
+        //    loader.setSource(new java.io.File("GetShape.csv"));
+        //    Instances testinstances = loader.getDataSet();
+        //    testinstances.setClassIndex(testinstances.numAttributes() - 1);
+        //    Instance sekarang = testinstances.lastInstance();
+
+        //    //Get and build saved model
+        //    LibSVM model = new LibSVM();
+        //    model = (LibSVM)SerializationHelper.read("OrientationModel.model");
+
+        //    //Classify actual test instance
+        //    double clsValue = model.classifyInstance(sekarang);
+        //    Console.WriteLine(clsValue);
+
+        //    return clsValue;
+        //} //0 = paralel, 1 = nonparalel
     }
 }

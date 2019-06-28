@@ -53,6 +53,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.malignRate = new ns1.BunifuCircleProgressbar();
             this.label4 = new System.Windows.Forms.Label();
+            this.Reset = new System.Windows.Forms.Button();
+            this.resultLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OutputBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputBox)).BeginInit();
@@ -129,14 +131,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.InputBox.BackColor = System.Drawing.Color.Transparent;
             this.InputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InputBox.Cursor = System.Windows.Forms.Cursors.Cross;
             this.InputBox.Location = new System.Drawing.Point(150, 153);
             this.InputBox.Name = "InputBox";
             this.InputBox.Size = new System.Drawing.Size(400, 300);
             this.InputBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.InputBox.TabIndex = 69;
             this.InputBox.TabStop = false;
-            this.InputBox.Click += new System.EventHandler(this.InputBox_Click);
             this.InputBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PicBox_Paint);
+            this.InputBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.InputBox_MouseClick);
             this.InputBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseDown);
             this.InputBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseMove);
             this.InputBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseUp);
@@ -154,9 +157,9 @@
             this.Browse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Browse.Location = new System.Drawing.Point(0, 190);
             this.Browse.Name = "Browse";
-            this.Browse.Size = new System.Drawing.Size(135, 50);
+            this.Browse.Size = new System.Drawing.Size(142, 50);
             this.Browse.TabIndex = 70;
-            this.Browse.Text = "   Browse Image";
+            this.Browse.Text = "   Telusuri Gambar";
             this.Browse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Browse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Browse.UseVisualStyleBackColor = false;
@@ -171,7 +174,7 @@
             this.directory.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.directory.Location = new System.Drawing.Point(150, 489);
             this.directory.Name = "directory";
-            this.directory.Size = new System.Drawing.Size(325, 20);
+            this.directory.Size = new System.Drawing.Size(400, 20);
             this.directory.TabIndex = 71;
             // 
             // Run
@@ -188,7 +191,7 @@
             this.Run.Name = "Run";
             this.Run.Size = new System.Drawing.Size(135, 50);
             this.Run.TabIndex = 75;
-            this.Run.Text = "   Diagnose";
+            this.Run.Text = "   Mulai Proses";
             this.Run.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Run.UseVisualStyleBackColor = false;
             this.Run.Click += new System.EventHandler(this.Run_Click);
@@ -207,10 +210,11 @@
             this.SaveAs.Name = "SaveAs";
             this.SaveAs.Size = new System.Drawing.Size(135, 50);
             this.SaveAs.TabIndex = 76;
-            this.SaveAs.Text = "   Save As";
+            this.SaveAs.Text = "   Simpan Hasil";
             this.SaveAs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SaveAs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveAs.UseVisualStyleBackColor = false;
+            this.SaveAs.Click += new System.EventHandler(this.SaveAs_Click);
             // 
             // ROI
             // 
@@ -247,7 +251,7 @@
             this.Details.Name = "Details";
             this.Details.Size = new System.Drawing.Size(135, 50);
             this.Details.TabIndex = 80;
-            this.Details.Text = "   Details";
+            this.Details.Text = "   Detail Hasil";
             this.Details.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Details.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Details.UseVisualStyleBackColor = false;
@@ -269,7 +273,7 @@
             this.Crop.Name = "Crop";
             this.Crop.Size = new System.Drawing.Size(78, 35);
             this.Crop.TabIndex = 81;
-            this.Crop.Text = "Crop";
+            this.Crop.Text = "Pilih";
             this.Crop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Crop.UseVisualStyleBackColor = false;
             this.Crop.Click += new System.EventHandler(this.Crop_Click);
@@ -286,7 +290,7 @@
             this.Help.Name = "Help";
             this.Help.Size = new System.Drawing.Size(135, 65);
             this.Help.TabIndex = 82;
-            this.Help.Text = "Help";
+            this.Help.Text = "Bantuan";
             this.Help.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Help.UseVisualStyleBackColor = false;
             this.Help.Click += new System.EventHandler(this.Help_Click);
@@ -415,9 +419,9 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(147, 469);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 17);
+            this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 87;
-            this.label3.Text = "Directory Path";
+            this.label3.Text = "Alamat Direktori";
             // 
             // malignRate
             // 
@@ -434,15 +438,15 @@
             this.malignRate.LabelVisible = true;
             this.malignRate.LineProgressThickness = 10;
             this.malignRate.LineThickness = 5;
-            this.malignRate.Location = new System.Drawing.Point(556, 489);
+            this.malignRate.Location = new System.Drawing.Point(575, 489);
             this.malignRate.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.malignRate.MaxValue = 100;
             this.malignRate.Name = "malignRate";
-            this.malignRate.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.malignRate.ProgressBackColor = System.Drawing.Color.Silver;
             this.malignRate.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.malignRate.Size = new System.Drawing.Size(152, 152);
             this.malignRate.TabIndex = 88;
-            this.malignRate.Value = 75;
+            this.malignRate.Value = 0;
             // 
             // label4
             // 
@@ -451,11 +455,43 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(567, 469);
+            this.label4.Location = new System.Drawing.Point(594, 469);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 21);
+            this.label4.Size = new System.Drawing.Size(120, 21);
             this.label4.TabIndex = 89;
-            this.label4.Text = "Diagnosis Result";
+            this.label4.Text = "Hasil Diagnosis";
+            // 
+            // Reset
+            // 
+            this.Reset.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Reset.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Reset.BackColor = System.Drawing.Color.White;
+            this.Reset.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reset.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset.Image = ((System.Drawing.Image)(resources.GetObject("Reset.Image")));
+            this.Reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Reset.Location = new System.Drawing.Point(878, 606);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(78, 35);
+            this.Reset.TabIndex = 90;
+            this.Reset.Text = "Reset";
+            this.Reset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Reset.UseVisualStyleBackColor = false;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            // 
+            // resultLabel
+            // 
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultLabel.Location = new System.Drawing.Point(740, 548);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(71, 25);
+            this.resultLabel.TabIndex = 91;
+            this.resultLabel.Text = "Status";
+            this.resultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -466,6 +502,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(970, 650);
+            this.Controls.Add(this.resultLabel);
+            this.Controls.Add(this.Reset);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.malignRate);
             this.Controls.Add(this.label3);
@@ -527,6 +565,8 @@
         private System.Windows.Forms.Label label3;
         private ns1.BunifuCircleProgressbar malignRate;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.Label resultLabel;
     }
 }
 

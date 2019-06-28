@@ -40,8 +40,8 @@ namespace project101
             double[,] Y = Accord.Math.Matrix.Transpose(X);
 
             //X.^2 dan Y.^2
-            double[,] Xp = opt.MatrixScalarD(X, 2, "power");
-            double[,] Yp = opt.MatrixScalarD(Y, 2, "power");
+            X = opt.MatrixScalarD(X, 2, "power");
+            Y = opt.MatrixScalarD(Y, 2, "power");
             //2*sigma_d^2
             double pembagiD = 2 * Math.Pow(sigma_d, 2);
             //2*sigma_r^2
@@ -53,7 +53,7 @@ namespace project101
             {
                 for (int j = 0; j < grid; j++)
                 {
-                    double pangkat = (Xp[i, j] + Yp[i, j]) / pembagiD;
+                    double pangkat = (Y[i, j] - X[i, j]) / pembagiD;
                     G[i, j] = Math.Pow(Math.E, -pangkat);
                 }
             }

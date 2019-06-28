@@ -6,7 +6,6 @@ namespace project101
 {
     class FiturGeometris
     {
-        MomenCitra momen = new MomenCitra();
         public double RasioTL(byte[,] F)
         {
             //function rasioHW = bboxcitra(F)
@@ -75,7 +74,7 @@ namespace project101
             double xc = arr[0];
             double yc = arr[1];
 
-            double theta = 0.5 * Math.Atan(2 * momen.MomenPusat(F, 1, 1) / (momen.MomenPusat(F, 2, 0) - momen.MomenPusat(F, 0, 2)));
+            double theta = 0.5 * Math.Atan(2 * MomenPusat(F, 1, 1) / (MomenPusat(F, 2, 0) - MomenPusat(F, 0, 2)));
             for (int i = 0; i < jum; i++)
             {
                 int x = Kontur[i][1];
@@ -986,6 +985,53 @@ namespace project101
 
             double[] arr = { pusat_y, pusat_x };
             return arr;
+        }
+
+
+
+        public double MomenPusat(byte[,] F, int p, int q)
+        {
+            //function[hasil] = momen_pusat(F, p, q)
+            //momen_pusat menghitung momen pusat berorde p, q
+            int m = F.GetLength(0);
+            int n = F.GetLength(1);
+            double m00 = MomenSpasial(F, 0, 0);
+
+            double xc = MomenSpasial(F, 1, 0) / m00;
+            double yc = MomenSpasial(F, 0, 1) / m00;
+
+            double mpq = 0;
+            for (int y = 0; y < m; y++)
+            {
+                for (int x = 0; x < n; x++)
+                {
+                    if (F[y, x] != 0)
+                    {
+                        mpq = mpq + Math.Pow((x - xc), p) * Math.Pow((y - yc), q);
+                    }
+                }
+            }
+            double hasil = mpq;
+            return hasil;
+        }
+        public double MomenSpasial(byte[,] F, int p, int q)
+        {
+            //function[hasil] = momen_spasial(F, p, q)
+            //MOMEN_SPASIAL menghitung momen spasial berorde(p, q)
+            int m = F.GetLength(0);
+            int n = F.GetLength(1);
+            double momenPQ = 0;
+            for (int y = 0; y < m; y++)
+            {
+                for (int x = 0; x < n; x++)
+                {
+                    if (F[y, x] != 0)
+                    {
+                        momenPQ = momenPQ + Math.Pow(x, p) * Math.Pow(y, q);
+                    }
+                }
+            }
+            return momenPQ;
         }
         #endregion
     }

@@ -10,7 +10,6 @@ namespace project101
 {
     class MomenCitra
     {
-        FiturGeometris geo = new FiturGeometris();
         BitmapToMatrix conv = new BitmapToMatrix();
         
         public double[] MomenHu(byte[,] F)
@@ -173,7 +172,7 @@ namespace project101
             n = n_baru;
 
             //Peroleh pusat massa dan letakkan di tengah
-            double[] arrb = geo.Centroid(D);
+            double[] arrb = Centroid(D);
             int xc = Convert.ToInt32(Math.Round(arrb[1]));
             int yc = Convert.ToInt32(Math.Round(arrb[0]));
 
@@ -550,6 +549,34 @@ namespace project101
             }
             int[] arrd = new int[] { min_y, max_y, min_x, max_x };
             return arrd;
+        }
+
+
+
+        public double[] Centroid(byte[,] BW)
+        {
+            //CENTROID Untuk memperoleh pusat masa sebuah objek yang terletak pada citra biner BW
+            double pusat_x = 0;
+            double pusat_y = 0;
+            double luas = 0;
+
+            for (int q = 0; q < BW.GetLength(0); q++)
+            {
+                for (int p = 0; p < BW.GetLength(1); p++)
+                {
+                    if (BW[q, p] == 255)
+                    {
+                        luas = luas + 1;
+                        pusat_x = pusat_x + p;
+                        pusat_y = pusat_y + q;
+                    }
+                }
+            }
+            pusat_x = pusat_x / luas;
+            pusat_y = pusat_y / luas;
+
+            double[] arr = { pusat_y, pusat_x };
+            return arr;
         }
     }
 }

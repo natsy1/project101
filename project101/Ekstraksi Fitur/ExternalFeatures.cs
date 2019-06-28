@@ -34,17 +34,22 @@
             momenZer = momen.MomenZernike(a, 4);
         }
 
-        public double[][] getExternal(byte[,] matrixMasking)
+        public double[] getMargin()
         {
             double[] MarginFeatures = new double[] { rasiotl, rec, dispersion, compactness, circularity, convex, tortuosity, aspectratio, nilaiCC };
+            //double[][] extFeature = new double[][] { MarginFeatures, ShapeFeatures };
+            return MarginFeatures;
+        }
+
+        public double[] getShape()
+        {
             double[] ShapeFeatures = new double[]
             {
                 rasiotl, rec, dispersion, compactness, circularity, convex, tortuosity,
                 momenHu[0], momenHu[1], momenHu[2], momenHu[3], momenHu[4], momenHu[5], momenHu[6],
                 momenZer[0], momenZer[1], momenZer[2], momenZer[3], momenZer[4], momenZer[5], momenZer[0]
             };
-            double[][] extFeature = new double[][] { MarginFeatures, ShapeFeatures };
-            return extFeature;
+            return ShapeFeatures;
         }
 
         #region MarginFeatures

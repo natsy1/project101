@@ -11,6 +11,7 @@
         double[] glrlm;
         double[] lacunarity;
         double[] HF;
+        byte[][,] Laws;
 
         public InternalFeatures(byte[,] matrixNodule)
         {
@@ -19,47 +20,41 @@
             glrlm = tekstur.GLRLM(BW);
             lacunarity = tekstur.Lacunarity(BW);
             HF = hist.Histogram(BW);
-            byte[][,] Laws = law.Laws(BW);
-        }
-
-
-        public void getInternal()
-        {
-
+            Laws = law.Laws(BW);
         }
 
 
         #region CompositionFeatures
-        public double[][] GLCM(byte[,] BW)
+        public double[][] GLCM()
         {
-            double[][] glcm = tekstur.GLCM(BW);
+            //double[][] glcm = tekstur.GLCM(BW);
             return glcm;
         }
         
-        public double[] GLRLM(byte[,] BW)
+        public double[] GLRLM()
         {
-            double[] glrlm = tekstur.GLRLM(BW);
+            //double[] glrlm = tekstur.GLRLM(BW);
             return glrlm;
         }
         
-        public double[] Lacunarity(byte[,] BW)
+        public double[] Lacunarity()
         {
-            double[] lacunarity = tekstur.Lacunarity(BW);
+            //double[] lacunarity = tekstur.Lacunarity(BW);
             return lacunarity;
         }
         #endregion
 
 
         #region EchogenicityFeatures
-        public double[] FiturHistogram(byte[,] A)
+        public double[] FiturHistogram()
         {
-            double[] HF = hist.Histogram(A);
+            //double[] HF = hist.Histogram(BW);
             return HF;
         }
 
-        public double[][] FiturLaws(byte[,] I)
+        public double[][] FiturLaws()
         {
-            byte[][,] Laws = law.Laws(I);
+            //byte[][,] Laws = law.Laws(BW);
             double[] law0 = law.LawsStatistik(Laws[0]);
             double[] law1 = law.LawsStatistik(Laws[1]);
             double[] law2 = law.LawsStatistik(Laws[2]);
