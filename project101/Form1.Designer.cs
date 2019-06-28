@@ -522,6 +522,7 @@
             this.Controls.Add(this.OutputBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Dashboard";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);

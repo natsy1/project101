@@ -16,8 +16,8 @@ namespace project101
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
+                Left += e.X - lastPoint.X;
+                Top += e.Y - lastPoint.Y;
             }
         }
 
@@ -31,5 +31,30 @@ namespace project101
             Close();
         }
 
+        public string marginValue
+        {
+            get { return marginResult.Text; }
+            set { marginResult.Text = value; }
+        }
+        public string shapeValue
+        {
+            get { return shapeResult.Text; }
+            set { shapeResult.Text = value; }
+        }
+        public string orientationValue
+        {
+            get { return orientResult.Text; }
+            set { orientResult.Text = value; }
+        }
+        public string echogenityValue
+        {
+            get { return echoResult.Text; }
+            set { echoResult.Text = value; }
+        }
+        public string compositionValue
+        {
+            get { return compoResult.Text; }
+            set { compoResult.Text = value; }
+        }
     }
 }

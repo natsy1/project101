@@ -131,6 +131,9 @@
             this.orientResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.orientResult.BackColor = System.Drawing.Color.Gainsboro;
+            this.orientResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.orientResult.Cursor = System.Windows.Forms.Cursors.Default;
             this.orientResult.Enabled = false;
             this.orientResult.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orientResult.Location = new System.Drawing.Point(129, 143);
@@ -144,6 +147,9 @@
             this.shapeResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.shapeResult.BackColor = System.Drawing.Color.Gainsboro;
+            this.shapeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shapeResult.Cursor = System.Windows.Forms.Cursors.Default;
             this.shapeResult.Enabled = false;
             this.shapeResult.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shapeResult.Location = new System.Drawing.Point(129, 91);
@@ -158,6 +164,9 @@
             this.marginResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.marginResult.BackColor = System.Drawing.Color.Gainsboro;
+            this.marginResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.marginResult.Cursor = System.Windows.Forms.Cursors.Default;
             this.marginResult.Enabled = false;
             this.marginResult.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marginResult.Location = new System.Drawing.Point(129, 44);
@@ -185,6 +194,9 @@
             this.compoResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.compoResult.BackColor = System.Drawing.Color.Gainsboro;
+            this.compoResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.compoResult.Cursor = System.Windows.Forms.Cursors.Default;
             this.compoResult.Enabled = false;
             this.compoResult.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compoResult.Location = new System.Drawing.Point(129, 94);
@@ -199,6 +211,9 @@
             this.echoResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.echoResult.BackColor = System.Drawing.Color.Gainsboro;
+            this.echoResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.echoResult.Cursor = System.Windows.Forms.Cursors.Default;
             this.echoResult.Enabled = false;
             this.echoResult.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.echoResult.Location = new System.Drawing.Point(129, 43);
@@ -243,7 +258,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(375, 500);
             this.Controls.Add(this.back);
             this.Controls.Add(this.label1);
@@ -251,6 +266,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
@@ -277,11 +293,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button back;
-        private System.Windows.Forms.TextBox orientResult;
-        private System.Windows.Forms.TextBox shapeResult;
-        private System.Windows.Forms.TextBox marginResult;
-        private System.Windows.Forms.TextBox compoResult;
-        private System.Windows.Forms.TextBox echoResult;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox orientResult;
+        public System.Windows.Forms.TextBox shapeResult;
+        public System.Windows.Forms.TextBox marginResult;
+        public System.Windows.Forms.TextBox compoResult;
+        public System.Windows.Forms.TextBox echoResult;
     }
 }

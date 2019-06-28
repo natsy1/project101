@@ -1,23 +1,40 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Windows.Forms;
 using System.Text;
 using System.IO;
 using Emgu.CV;
 using Emgu.CV.Structure;
-using Emgu.CV.Util;
-using Emgu.CV.CvEnum;
 
 namespace project101
 {
     public partial class Form1 : Form
-    {
+    {        
         public Form1()
         { 
             InitializeComponent();
         }
+
+        #region VariableConstructor
+        bool mouseClicked;
+        Point startPoint = new Point();
+        Point endPoint = new Point();
+        Rectangle rectCropArea;
+
+        Bitmap inputImg;
+        Bitmap cropped;
+
+        double persentase;
+        string marginCls;
+        string shapeCls;
+        string oriCls;
+        string echoCls;
+        string compCls;
+
+        BitmapToMatrix conv = new BitmapToMatrix();
+        Form2 form2 = new Form2();
+        #endregion
 
 
         #region ImageCrop
@@ -100,8 +117,8 @@ namespace project101
             mouseClicked = false;
 
             // This is needed so that it does not flicker on repaints
-            this.SetStyle(ControlStyles.DoubleBuffer, true);
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
         }
 
         private void Crop_Click(object sender, EventArgs e)
@@ -165,31 +182,14 @@ namespace project101
             lastPoint = new Point(e.X, e.Y);
         }
         #endregion
+
         
-
-        #region VariableConstructor
-        bool mouseClicked;
-        Point startPoint = new Point();
-        Point endPoint = new Point();
-        Rectangle rectCropArea;
-
-        Bitmap inputImg;
-        Bitmap cropped;
-
-        double persentase;
-
-        BitmapToMatrix conv = new BitmapToMatrix();
-
-        #endregion
-
-
         public void Browse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog
             {
                 Filter = "Image Files(*.bmp)|*.bmp"
             };
-
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 //Open the browsed image and display it
@@ -211,7 +211,11 @@ namespace project101
 
         private void Details_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            form2.marginValue = marginCls.ToString();
+            form2.shapeValue = shapeCls.ToString();
+            form2.orientationValue = oriCls.ToString();
+            form2.echogenityValue = echoCls.ToString();
+            form2.compositionValue = compCls.ToString();
             form2.ShowDialog();
         }
 
@@ -221,7 +225,7 @@ namespace project101
             Run.TextAlign = ContentAlignment.MiddleCenter;
             Run.Refresh();
 
-            #region pre-processing
+            #region Pre-processing
             if (cropped != null) { inputImg = cropped; }
             //Adaptive Median Filter
             byte[,] matrixInput = conv.BitmaptoMatrix(inputImg);
@@ -240,10 +244,11 @@ namespace project101
             OutputBox.Refresh(); InputBox.Refresh();
             #endregion
 
-            Run.Text = "Ekstraksi Fitur...";
+            Run.Text = " Ekstraksi Fitur...";
             Run.TextAlign = ContentAlignment.MiddleCenter;
             Run.Refresh();
 
+            #region Feature Extraction
             //Input Internal
             Bitmap bitmapNodule = inputImg;
             OpenFileDialog ofd = new OpenFileDialog()
@@ -257,13 +262,10 @@ namespace project101
                 Bitmap original = new Bitmap(ofd.FileName);
                 InputBox.Image = original;
                 InputBox.Refresh();
-                //Display image file path  
-                directory.Text = ofd.FileName;
 
                 bitmapNodule = original;
             }
 
-            //Feature Extraction
             byte[,] matrixNodule = conv.BitmaptoMatrix(bitmapNodule);
             InternalFeatures intn = new InternalFeatures(matrixNodule);
 
@@ -325,13 +327,10 @@ namespace project101
                 Bitmap original = new Bitmap(ofd2.FileName);
                 InputBox.Image = original;
                 InputBox.Refresh();
-                //Display image file path  
-                directory.Text = ofd.FileName;
 
                 bitmapMasking = original;
             }
 
-            //Feature Extraction
             byte[,] matrixMasking = conv.BitmaptoMatrix(bitmapMasking);
             ExternalFeatures ext = new ExternalFeatures(matrixMasking);
 
@@ -365,18 +364,20 @@ namespace project101
                                             ShapeFeature[14], ShapeFeature[15], ShapeFeature[16], ShapeFeature[17], ShapeFeature[18], ShapeFeature[19], ShapeFeature[20], "e"));
                 sw.WriteAsync(sb.ToString());
             }
-            
-            Run.Text = "Klasifikasi...";
+            #endregion
+
+            Run.Text = "   Klasifikasi...";
             Run.TextAlign = ContentAlignment.MiddleCenter;
             Run.Refresh();
 
+            #region Classification
             //CLASSIFICATION
             int poin = 0;
             MultiLayerPerceptron mlp = new MultiLayerPerceptron();
             double echo = mlp.EchogenicityClassification();
             double comp = mlp.CompositionClassification();
 
-            string echoCls; string compCls;
+            //string echoCls; string compCls;
             if (comp == 0) { compCls = "Kistik"; }
             else if (comp == 1) { compCls = "Padat"; poin += 2; }
             else if (comp == 2) { compCls = "Kompleks"; poin += 1; }
@@ -387,14 +388,12 @@ namespace project101
             else if (echo == 2) { echoCls = "Hipoekoik"; poin += 2; }
             else if (echo == 3) { echoCls = "Sangat Hipoekoik"; poin += 3; }
             else { echoCls = "tidak dapat diidentifikasi"; }
-            Console.WriteLine(echoCls);
-            Console.WriteLine(compCls);
-
+            
             SupportVectorMachine svm = new SupportVectorMachine();
             double margin = svm.MarginClassification();
             double[] shape = svm.ShapeClassification();
 
-            string marginCls; string shapeCls; string oriCls;
+            //string marginCls; string shapeCls; string oriCls;
             if (margin == 0) { marginCls = "Ireguler"; poin += 2; }
             else if (margin == 1) { marginCls = "Halus"; }
             else { marginCls = "tidak dapat diidentifikasi"; }
@@ -407,6 +406,8 @@ namespace project101
             else if (shape[1] == 1) { oriCls = "Non-paralel"; poin += 2; }
             else { oriCls = "tidak dapat diidentifikasi"; }
 
+            Console.WriteLine(echoCls);
+            Console.WriteLine(compCls);
             Console.WriteLine(marginCls);
             Console.WriteLine(shapeCls);
             Console.WriteLine(oriCls);
@@ -416,40 +417,60 @@ namespace project101
             if (poin < 4) { resultLabel.Text = "Jinak"; }
             else if (poin >= 4 && poin < 7) { resultLabel.Text = "Mencurigakan"; }
             else if (poin > 7) { resultLabel.Text = "Ganas"; }
-
-            Run.Text = "Finished";
+            #endregion
+                      
+            Run.Text = "   Selesai";
             Run.TextAlign = ContentAlignment.MiddleCenter;
             Run.Refresh();
         }
 
         private void Reset_Click(object sender, EventArgs e)
         {
-            //InputBox.Dispose();
-            //OutputBox.Dispose();
-            //malignRate.Value = 0;
-            //resultLabel.Text = "Status";
-            //directory.Dispose();           
+            InputBox.Image = null;
+            OutputBox.Image = null;
+            malignRate.Value = 0;
+            resultLabel.Text = "Status";
+            directory.Text = null;
+            Run.Text = "   Mulai Proses";
+            form2.marginValue = "";
+            form2.shapeValue = "";
+            form2.orientationValue = "";
+            form2.echogenityValue = "";
+            form2.compositionValue = "";
         }
 
         private void SaveAs_Click(object sender, EventArgs e)
         {
-            Bitmap newImage = new Bitmap(inputImg.Width, inputImg.Height + 50);
-            var gr = Graphics.FromImage(newImage);
-            gr.DrawImageUnscaled(inputImg, 0, 0);
-            string label = persentase.ToString() + "Ganas";
-            gr.DrawString(label, SystemFonts.DefaultFont, Brushes.Black, new RectangleF(0, inputImg.Height, inputImg.Width, 50));
+            string label = Convert.ToInt32(persentase).ToString() + "%-" + resultLabel.Text;
+           
+            PointF firstLocation = new PointF(0, 0);
 
-            SaveFileDialog ofd = new SaveFileDialog
+            Bitmap newBitmap;
+            using (var bitmap = inputImg)//load the image file
+            {
+                using (Graphics graphics = Graphics.FromImage(bitmap))
+                {
+                    using (Font arialFont = new Font("Times New Roman", 18))
+                    {
+                        graphics.DrawString(label, arialFont, Brushes.Gold, firstLocation);
+                    }
+                }
+                newBitmap = new Bitmap(bitmap);
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog
             {
                 Filter = "Image Files(*.bmp)|*.bmp",
                 InitialDirectory = directory.ToString(),
                 FileName = ".bmp"
             };
 
-            if (ofd.ShowDialog() == DialogResult.OK)
+            if (sfd.ShowDialog() == DialogResult.OK)
             {
-                newImage.Save(label);
+                newBitmap.Save(sfd.FileName);//save the image file
             }
+            newBitmap.Dispose();         
         }
+         
     }
 }
