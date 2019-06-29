@@ -42,7 +42,6 @@
             this.Details = new System.Windows.Forms.Button();
             this.Crop = new System.Windows.Forms.Button();
             this.Help = new System.Windows.Forms.Button();
-            this.Maximize = new System.Windows.Forms.Button();
             this.Minimize = new System.Windows.Forms.Button();
             this.CloseApp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -91,9 +90,9 @@
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(224, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 21);
+            this.label2.Size = new System.Drawing.Size(361, 21);
             this.label2.TabIndex = 63;
-            this.label2.Text = "Universitas Gadjah Mada";
+            this.label2.Text = "Computer-aided Diagnosis for Thyroid Nodule";
             // 
             // label1
             // 
@@ -104,11 +103,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(221, 12);
+            this.label1.Location = new System.Drawing.Point(221, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(532, 41);
+            this.label1.Size = new System.Drawing.Size(89, 41);
             this.label1.TabIndex = 62;
-            this.label1.Text = "Sistem Diagnosis dengan Bantuan Komputer";
+            this.label1.Text = "CAThy";
             // 
             // OutputBox
             // 
@@ -295,25 +294,6 @@
             this.Help.UseVisualStyleBackColor = false;
             this.Help.Click += new System.EventHandler(this.Help_Click);
             // 
-            // Maximize
-            // 
-            this.Maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Maximize.AutoSize = true;
-            this.Maximize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Maximize.BackColor = System.Drawing.Color.Transparent;
-            this.Maximize.FlatAppearance.BorderSize = 0;
-            this.Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Maximize.Image = ((System.Drawing.Image)(resources.GetObject("Maximize.Image")));
-            this.Maximize.Location = new System.Drawing.Point(892, 12);
-            this.Maximize.Name = "Maximize";
-            this.Maximize.Size = new System.Drawing.Size(32, 32);
-            this.Maximize.TabIndex = 67;
-            this.Maximize.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Maximize.UseVisualStyleBackColor = false;
-            this.Maximize.Click += new System.EventHandler(this.Maximize_Click);
-            // 
             // Minimize
             // 
             this.Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -325,7 +305,7 @@
             this.Minimize.FlatAppearance.BorderSize = 0;
             this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
-            this.Minimize.Location = new System.Drawing.Point(857, 12);
+            this.Minimize.Location = new System.Drawing.Point(890, 12);
             this.Minimize.Name = "Minimize";
             this.Minimize.Size = new System.Drawing.Size(31, 31);
             this.Minimize.TabIndex = 66;
@@ -511,7 +491,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CloseApp);
             this.Controls.Add(this.Minimize);
-            this.Controls.Add(this.Maximize);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -555,7 +534,6 @@
         private System.Windows.Forms.Button Details;
         private System.Windows.Forms.Button Crop;
         private System.Windows.Forms.Button Help;
-        private System.Windows.Forms.Button Maximize;
         private System.Windows.Forms.Button Minimize;
         private System.Windows.Forms.Button CloseApp;
         private System.Windows.Forms.Panel panel1;

@@ -1,9 +1,7 @@
 ﻿using System;
 using weka.classifiers.functions;
 using weka.core.converters;
-using weka.classifiers.misc;
 using weka.core;
-using weka.classifiers;
 
 namespace project101
 {
@@ -27,7 +25,7 @@ namespace project101
             Console.WriteLine(clsValue);
 
             return clsValue;
-        }//0=ireguler, 1=halus
+        }
 
 
         public double[] ShapeClassification()
@@ -53,27 +51,7 @@ namespace project101
             double[] value = new double[] { valueShape, valueOri };
 
             return value;
-        }//0=ireguler, 1=roundtooval
-        
-
-        //public double OrientationClassification()
-        //{
-        //    //Get single Test Instance from CSV file
-        //    CSVLoader loader = new CSVLoader();
-        //    loader.setSource(new java.io.File("GetShape.csv"));
-        //    Instances testinstances = loader.getDataSet();
-        //    testinstances.setClassIndex(testinstances.numAttributes() - 1);
-        //    Instance sekarang = testinstances.lastInstance();
-
-        //    //Get and build saved model
-        //    LibSVM model = new LibSVM();
-        //    model = (LibSVM)SerializationHelper.read("OrientationModel.model");
-
-        //    //Classify actual test instance
-        //    double clsValue = model.classifyInstance(sekarang);
-        //    Console.WriteLine(clsValue);
-
-        //    return clsValue;
-        //} //0 = paralel, 1 = nonparalel
+        }
+       
     }
 }

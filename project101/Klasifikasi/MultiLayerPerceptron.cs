@@ -1,9 +1,6 @@
-﻿using System;
-using weka.classifiers.functions;
+﻿using weka.classifiers.functions;
 using weka.core.converters;
-using weka.classifiers.misc;
 using weka.core;
-using weka.classifiers;
 
 namespace project101
 {
@@ -24,7 +21,6 @@ namespace project101
 
             //Classify actual test instance
             double clsValue = model.classifyInstance(sekarang);
-            Console.WriteLine(clsValue);
             
             return clsValue;
         }
@@ -44,7 +40,6 @@ namespace project101
 
             //Classify actual test instance
             double clsValue = model.classifyInstance(sekarang);
-            Console.WriteLine(clsValue);
             
             return clsValue;
         }
